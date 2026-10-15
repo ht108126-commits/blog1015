@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>我的 Flask 部落格</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        nav { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+        nav a { margin-right: 15px; text-decoration: none; color: #0066cc; }
+        .post { border: 1px solid #eee; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">首頁</a>
+        <a href="{{ url_for('create') }}">新增文章</a>
+    </nav>
+    
+    <!-- 具體內容會插入在這裡 -->
+    {% block content %}{% endblock %}
+</body>
+</html>

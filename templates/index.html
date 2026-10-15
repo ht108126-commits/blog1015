@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>所有文章</h1>
+    {% for post in posts %}
+        <div class="post">
+            <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p>作者：{{ post.author }}</p>
+            <!-- 只顯示內容前 50 個字作為摘要 -->
+            <p>{{ post.content[:50] }}...</p>
+        </div>
+    {% else %}
+        <p>目前還沒有任何文章喔！</p>
+    {% endfor %}
+{% endblock %}

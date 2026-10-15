@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>新增文章</h1>
+    <form method="POST" action="{{ url_for('create') }}">
+        <p>
+            <label for="title">標題 (Title)：</label><br>
+            <input type="text" id="title" name="title" required style="width: 100%;">
+        </p>
+        <p>
+            <label for="author">作者 (Author)：</label><br>
+            <input type="text" id="author" name="author" required style="width: 100%;">
+        </p>
+        <p>
+            <label for="content">文章內容 (Content)：</label><br>
+            <textarea id="content" name="content" rows="10" required style="width: 100%;"></textarea>
+        </p>
+        <button type="submit">發布文章</button>
+    </form>
+{% endblock %}
